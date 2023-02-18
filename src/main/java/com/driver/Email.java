@@ -28,10 +28,13 @@ public class Email {
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
         if(!oldPassword.equals(this.password)){
+
             return;
         }
+
         if(conditons(newPassword)){
             this.password = newPassword;
+
         }
 
     }
@@ -48,7 +51,7 @@ public class Email {
             if(newPassword.charAt(i)>='A' && newPassword.charAt(i)<='Z') upper = true;
             if(newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') lower = true;
             if(newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9') digit = true;
-            if((newPassword.charAt(i)<='A' && newPassword.charAt(i)>='Z') && (newPassword.charAt(i)<='a' && newPassword.charAt(i)>='z') && (newPassword.charAt(i)<='0' && newPassword.charAt(i)>='9')) special = true;
+            if((newPassword.charAt(i)>='A' && newPassword.charAt(i)<='Z') ^ (newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') ^ (newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9')) special = true;
         }
         return upper && lower && digit && special;
     }
