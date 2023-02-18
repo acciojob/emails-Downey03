@@ -49,9 +49,9 @@ public class Email {
 
         for(int i=0;i<newPassword.length();i++){
             if(newPassword.charAt(i)>='A' && newPassword.charAt(i)<='Z') upper = true;
-            if(newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') lower = true;
-            if(newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9') digit = true;
-            if((newPassword.charAt(i)>='A' && newPassword.charAt(i)<='Z') ^ (newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') ^ (newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9')) special = true;
+            else if(newPassword.charAt(i)>='a' && newPassword.charAt(i)<='z') lower = true;
+            else if(newPassword.charAt(i)>='0' && newPassword.charAt(i)<='9') digit = true;
+            else special = true;
         }
         return upper && lower && digit && special;
     }
